@@ -1,0 +1,55 @@
+#quiz {
+    min-height: 64px;
+}
+
+#quiz.loading::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("icon-loading.svg");
+    animation: loader-spin 1s infinite linear;
+    margin: 0 auto;
+}
+
+#quiz ol li {
+    list-style-type: lower-latin;
+    padding: 1rem;
+}
+
+#quiz ol li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#quiz ol.disabled li,
+#quiz ol.disabled li:hover {
+    background-color: transparent;
+    opacity: .5;
+    cursor: default;
+}
+
+#quiz ol li.correct,
+#quiz ol li.correct:hover {
+    background-color: #3c3;
+    opacity: 1;
+}
+
+#quiz ol li.wrong,
+#quiz ol li.wrong:hover {
+    background-color: #c33;
+    opacity: 1;
+}
+
+#quiz .hidden {
+    display: none !important;
+}
+
+@keyframes loader-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
